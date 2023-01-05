@@ -10,11 +10,9 @@ const Mongo_URL = process.env.Mongo_URL;
 const client = new MongoClient(Mongo_URL)
 await client.connect()
 console.log("Mongo is connected")
-app.get("/", function (request, response) {
-    response.send("🙋‍♂️, 🌏 🎊✨🤩");
-});
 
-app.get("/books", async function (request, response) {
+
+app.get("/", async function (request, response) {
     const books = await client.db("books").collection("books").find({}).toArray()
     response.send(books);
 });
