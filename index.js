@@ -6,7 +6,6 @@ import { MongoClient } from 'mongodb';
 const PORT = process.env.PORT;
 
 const Mongo_URL = process.env.Mongo_URL;
-//mongodb+srv://mohammedansari808:PRwl2ajPVWhY2jr1@cluster0.q2rstmh.mongodb.net/
 const client = new MongoClient(Mongo_URL)
 await client.connect()
 console.log("Mongo is connected")
